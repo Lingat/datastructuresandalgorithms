@@ -1,3 +1,3 @@
-# Data structures and Algorithms
+# Data Structures and Algorithms
 
 A repo where I practise coding data structures and algorithms in python.
