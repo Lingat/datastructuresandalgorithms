@@ -65,7 +65,13 @@ def displayTrie(trieNode, word, index):
 
     if(trieNode.isEnd):
         print(word)
-        word = ""
+        
+        childExists = False
+        for child in trieNode.children:
+            if child:
+                childExists = True
+        if(not childExists): 
+            word = ""
   
     for child in range(len(trieNode.children)):
         if(trieNode.children[child] != None):
