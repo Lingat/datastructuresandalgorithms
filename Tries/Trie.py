@@ -46,11 +46,23 @@ class Trie:
 
         trie.isEnd = True
 
+    def search(self, word):
+        trie = self.root
+        wordLength = len(word)
+
+        for ch in range(wordLength):
+            index = self._charToIndex(word[ch])
+            if not trie.children[index]:
+                return False
+            trie = trie.children[index]
+        return trie.isEnd
+
 
 
 def displayTrie(trieNode, word, index):
     if index != -1:
         word = word + chr(ord('a') + index)
+
     if(trieNode.isEnd):
         print(word)
         word = ""
@@ -64,8 +76,9 @@ def displayTrie(trieNode, word, index):
 def main():
  
     # Input keys (use only 'a' through 'z' and lower case)
-    words = ["hello", "how", "alone", "biscuit"]
- 
+    words = ["hello", "how", "alone", "biscuit", "the", "these"]
+    output = ["Not present in trie",
+              "Present in trie"]
  
     # Trie object
     t = Trie()
@@ -74,7 +87,13 @@ def main():
     for word in words:
         t.insert(word)
 
+    print("Trie: ")
     displayTrie(t.root, "", -1)
+
+    print("{} ---- {}".format("the",output[t.search("the")]))
+    print("{} ---- {}".format("these",output[t.search("these")]))
+    print("{} ---- {}".format("their",output[t.search("their")]))
+    print("{} ---- {}".format("thaw",output[t.search("thaw")]))
  
 if __name__ == '__main__':
     main()
