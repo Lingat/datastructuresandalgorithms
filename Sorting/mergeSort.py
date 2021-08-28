@@ -20,8 +20,8 @@ def mergeSort(arr):
                 arr[k] = R[j]
                 j+=1
                 k+=1
-        # checking if there's any numbers left
 
+        # checking if there's any numbers left
         while i < len(L): 
             arr[k] = L[i]
             i+=1
@@ -32,7 +32,3 @@ def mergeSort(arr):
             j+=1
             k+=1
   
-
-arr = [123, 2, 145, 8, 59, 4]
-mergeSort(arr)
-print(arr)
