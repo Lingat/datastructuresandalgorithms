@@ -37,11 +37,5 @@ class linkedList:
             curr = curr.next
         curr.next = Node(end)
 
-list1 = linkedList(10)
-list1.appendToTail(15)
-list1.appendToTail(20)
-list1.appendToTail(30)
-list1.head = list1.deleteNode(15)
-list1.printList()
 
 
