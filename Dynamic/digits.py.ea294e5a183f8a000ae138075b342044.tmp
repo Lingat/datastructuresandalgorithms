@@ -1,6 +1,0 @@
-def countEven(n):
-    for i in range(0, 10 ** (n-1)):
-        print(i)
-
-
-countEven(2)
