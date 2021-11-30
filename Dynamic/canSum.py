@@ -16,4 +16,4 @@ def canSum(n, arr, memo={}):
     return False
 
 
-print(canSum(14, [7, 14]))
+print(canSum(15, [7, 14]))
